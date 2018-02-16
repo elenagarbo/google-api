@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style>
+      #map {
+        width:70%;
+        height: 500px;
+           }
+           #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    
+    <input type="text" id="pac-input" class="controls" placeholder="¿Donde quiere ir?" size="50"><br><br><br>
+    
+    <div id="map" align="center"></div>
+    
+    <script>
+      function initMap() {
+        var madrid = {lat: 40.428462, lng:  -3.704267};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: madrid,
+          mapTypeId: 'terrain',
+//           map.setMapTypeId('terrain');
+        });
+//         var marker = new google.maps.Marker({
+//           position: madrid,
+//           map: map
+//         });
+        
+        var limites = new google.maps.LatLngBounds(
+        		  new google.maps.LatLng(40.447818, -3.746736), 
+        		  new google.maps.LatLng(40.383544, -3.642886));
+        
+        var input = document.getElementById('pac-input');
+        maps.controls
+        
+        var options = {
+          bounds: defaultBounds,
+          types: ['regions']
+        };
+
+        autocomplete = new google.maps.places.Autocomplete(input, options);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB29iPuIgyP_AyzGThitYhQjiLmHARo5HQ&callback=initMap&libraries=places">
+    </script>
+  </body>
+</html>

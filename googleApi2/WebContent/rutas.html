@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div>
+    <label for="origen">Origen</label>
+    <input type="text" name="origen" id="origen" placeholder="calle, ciudad, estado..." />
+    <br />
+    <label for="destino">Destino</label>
+    <input type="text" name="destino" id="destino" placeholder="calle, ciudad, estado..." />
+    <br />
+    <input type="button" id="buscar" value="Buscar ruta"  />
+</div>
+<br />
+<h3>Opciones</h3>
+<div id="rutaOps">
+    <select id="modo_viaje" class="opciones_ruta">
+        <option value="DRIVING" selected="selected">Auto</option>
+        <option value="BICYCLING">Bicicleta</option>
+        <option value="WALKING">Caminando</option>
+    </select>
+    <select id="tipo_sistema" class="opciones_ruta">
+        <option value="METRIC" selected="selected">Métrico</option>
+        <option value="IMPERIAL">Imperial</option>
+    </select>
+</div>
+<br />
+<div>
+    <div id="map_canvas" style="float:left; width:70%; height:500px"></div>
+    <div id="panel_ruta" style="float:right; overflow: auto; width:30%; height: 500px"></div>
+</div>
+</body>
+</html>
